@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    border-bottom: 1px solid #ccc;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 100px;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.blog-post {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-post p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 50%;
+}
+
+.nav-links li a {
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #d63031;
+}
+
+footer {
+    background-color: #f7f7f7;
+    color: #444;
+    padding: 50px 100px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content h3 {
+    margin-bottom: 20px;
+}
+
+.footer-content p {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+}
+
+.socials li {
+    margin-right: 10px;
+}
+
+.socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    text-align: center;
+}

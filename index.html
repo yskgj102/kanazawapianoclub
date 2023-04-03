@@ -1,32 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Kanazawa Piano Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 
 <body>
     <header>
-        <h1>My Personal Website</h1>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="contact-form.html">Contact Form</a></li>
+            <div class="logo">
+                <a href="../index.html">Kanazawa Piano Club</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="concert.html">Concert</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="contact-form.html">Contact</a></li>
             </ul>
         </nav>
-        <a href="contact-form.html" class="btn btn-primary">Contact Us</a>
     </header>
-
 
     <div class="container">
         <h2>Latest News</h2>
         <p>Welcome to my website! This is where I share my thoughts and updates on my life and work. Check back often
-            for the latest news and updates.</p>
+            for
+            the latest news and updates.</p>
 
         <div class="blog-post">
             <h2>Blog Post Title</h2>
@@ -36,28 +40,40 @@
 
         <div class="blog-post">
             <h2>Blog Post Title</h2>
-
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit euismod magna, at vestibulum felis
-                facilisis
-                quis. Suspendisse potenti.</p>
+                facilisis quis. Suspendisse potenti.</p>
         </div>
 
-        <h2>Announcements</h2>
-        <ul>
-            <li>Announcement 1</li>
-            <li>Announcement 2</li>
-            <li>Announcement 3</li>
-        </ul>
+        <div class="blog-post">
+            <h2>Blog Post Title</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit euismod magna, at vestibulum felis
+                facilisis quis. Suspendisse potenti.</p>
+        </div>
 
+        <h2>YouTube Video</h2>
         <div class="embed-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
-                allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
+    <!-- ページのコンテンツ -->
+
+
     <footer>
-        <p>&copy; 2023 My Personal Website</p>
+        <div class="footer-content">
+            <h3>Kanazawa Piano Club</h3>
+            <p>We are a community of piano lovers in Kanazawa.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="facebook.png"></a></li>
+                <li><a href="#"><img src="instagram.png"></a></li>
+                <li><a href="#"><img src="twitter.png"></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Kanazawa Piano Club | Designed by Your Name</p>
+        </div>
     </footer>
+
 </body>
 
 </html>
