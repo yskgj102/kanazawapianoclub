@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Text to Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="input" rows="10" cols="50"></textarea><br>
+    <button onclick="processInput()">Process</button><br><br>
+    <div id="output"></div><br>
+    <button onclick="exportCSV()">Export CSV</button><br><br>
+    <div id="filtered-data"></div>
+        <a href="index.html">back</a>
+    <script>
+        function processInput() {
+            var input = document.getElementById("input").value;
+            var lines = input.trim().split('\n');
+            var data = lines.map(function (line) {
+                if (line.includes('=')) {
+                    return line.split('=');
+                } else {
+                    return line.split(',');
+                }
+            });
+            var table = document.createElement('table');
+            var headerRow = document.createElement('tr');
+            data[0].forEach(function (header) {
+                var th = document.createElement('th');
+                th.textContent = header.trim();
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+            data.slice(1).forEach(function (row) {
+                var tableRow = document.createElement('tr');
+                row.forEach(function (cell) {
+                    var td = document.createElement('td');
+                    td.textContent = cell.trim();
+                    tableRow.appendChild(td);
+                });
+                table.appendChild(tableRow);
+            });
+            var output = document.getElementById('output');
+            output.innerHTML = '';
+            output.appendChild(table);
+        }
+        function exportCSV() {
+            var rows = document.querySelectorAll('table tr');
+            var csvContent = "data:text/csv;charset=utf-8,";
+            rows.forEach(function (row) {
+                var cells = row.querySelectorAll('th,td');
+                var csvRow = [];
+                cells.forEach(function (cell) {
+                    csvRow.push(cell.textContent);
+                });
+                csvContent += csvRow.join(',') + "\n";
+            });
+            var encodedUri = encodeURI(csvContent);
+            var link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "output.csv");
+            document.body.appendChild(link);
+            link.click();
+        }
+        var filteredData = document.getElementById('filtered-data');
+        var dataRows = document.querySelectorAll('table tr');
+        var filteredRows = [];
+        dataRows.forEach(function (row) {
+            var cells = row.querySelectorAll('td');
+            if (cells.length > 1 && cells[1].textContent.trim() == 'condition') {
+                filteredRows.push(row.cloneNode(true));
+            }
+        });
+        var filteredTable = document.createElement('table');
+        filteredTable.appendChild(document.createElement('tbody'));
+        filteredRows.forEach(function (row) {
+            filteredTable.tBodies[0].appendChild(row);
+        });
+        filteredData.appendChild(filteredTable);
+    </script>
+</body>
+
+</html>
