@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Layoutファイル to FDファイル</title>
+    <meta charset="UTF-8">
+    <!-- <script src="convertCSVfromText.js"></script> -->
+</head>
+
+<body>
+    <h2>Layoutファイル to FDファイル</h2>
+    <form>
+        <label for="input">入力：</label>
+        <textarea id="input" name="input" rows="10" cols="50">
+;-------------------------------------------------------------------------------
+[DeviceInfo]
+;-------------------------------------------------------------------------------
+PartNo=PA03836-B003
+Model=fi-8040
+MaxSerial=2999999
+Format=CPCH#6S1
+Note=MERCURY4 (JP)
+Reset=0
+UseDataBase=1
+;Name-Label Model-Name
+Variable_000=fi-8040
+;Pack-Label FI-Name
+Variable_001=FI-8040
+;JAN/UPC
+Variable_002=493976131362
+;REGULATORY MODEL
+Variable_003=P3836A
+;Warranty
+Variable_005=1年間
+;-------------------------------------------------------------------------------
+[Label_00]
+;-------------------------------------------------------------------------------
+Bozai=PA93950-1010
+Name=Name/Pack Label
+Draw=X0PA93147-Y75X(3)/X0PA93147-Y76X(3)
+Page=1
+;-------------------------------------------------------------------------------
+;铭牌(Name Label)
+;-------------------------------------------------------------------------------
+;===================================================
+Item_010=STR,2700,310,"fi Series #k ",220,0,1,FrutigerLTStd-Bold
+;===================================================
+Item_020=STR,2700,520,型名,200,84,1,Meiryo UI Bold
+Item_025=STR,4350,520,#V001,200,80,1,Meiryo UI Bold
+;===================================================
+Item_030=STR,2700,720,PART NO.,200,80,1,Meiryo UI Bold
+Item_035=STR,4350,720,#z,200,86,1,Meiryo UI Bold
+;===================================================
+Item_040=STR,2700,920,SER.NO.,200,84,1,Meiryo UI Bold
+Item_045=STR,4350,920,#s,200,90,1,Meiryo UI Bold
+;===================================================
+Item_050=STR,2700,1110,DATE,180,84,1,Meiryo UI Bold
+Item_055=STR,4350,1110,#4y-#02m,180,74,1,Meiryo UI Bold
+;===================================================
+Item_060=STR,2700,1270,REGULATORY MODEL,180,68,1,Meiryo UI Bold
+Item_065=STR,4350,1270,#V003,180,74,1,Meiryo UI Bold
+;===================================================
+Item_070=STR,6600,310,INPUT,180,64,1,Meiryo UI Bold
+Item_075=STR,7200,310,"16V === 2.5A 3.1kg",180,64,1,Meiryo UI Bold
+;===================================================
+Item_080=VER,R,8800,550,25,450,240,220,2,1,1,1,1,180,0,1,MS Gothic
+;===================================================
+Item_110=BAR,2700,1490,#s,1,18,300,0,1,3,1,0,100,80,1,MS Gothic
+;===================================================
+Item_120=IMG,5900,1150,0,600,M5D01-18-012-H31(01).bmp
+Item_130=IMG,6700,1200,0,500,M5D01-18-012-H12(01).bmp
+;===================================================
+Item_340=STR,6250,2050,MADE IN CHINA,180,80,1,Meiryo UI Bold
+;===================================================
+Item_400=IMG,5250,1970,0,300,pfu_logo.bmp
+
+;-------------------------------------------------------------------------------
+;捆包(Pack Label)
+;-------------------------------------------------------------------------------
+Item_500=STR,1450,2820," fi Series",390,0,1,FrutigerLTStd-Bold
+Item_510=STR,R,8300,2820," #k",390,0,1,FrutigerLTStd-Bold
+;===================================================
+Item_520=LIN,800,3250,9200,3250,30,0
+Item_530=STR,1500,3250,型名,370,0,1,Arial
+Item_535=STR,R,8300,3270,#V001,380,0,1,MS Gothic
+;===================================================
+Item_540=LIN,800,3670,9200,3670,30,0
+Item_550=STR,1500,3670,PART No.,340,150,1,Arial
+Item_555=STR,R,8300,3680,#z,380,0,1,MS Gothic
+Item_559=BAR,2400,4040,#z,1,30,400,0,1,5,0,0,250,0,0,MS Gothic
+;===================================================
+Item_560=LIN,800,4500,9200,4500,30,0
+Item_570=STR,1500,4500,SERIAL No.,340,150,1,Arial
+Item_575=STR,R,8300,4510,#s,380,0,1,MS Gothic
+Item_579=BAR,3000,4870,#s,1,30,400,0,1,5,0,0,250,0,0,MS Gothic
+;===================================================
+Item_600=LIN,800,5330,9200,5330,30,0
+Item_610=STR,1500,5320,REGULATORY MODEL,340,150,1,Arial
+Item_620=STR,R,8300,5330,#V003,380,200,1,MS Gothic
+;===================================================
+Item_800=LIN,800,5690,9200,5690,30,0
+;;***In the case of JAN code, specify it in 12 columns of data.***
+Item_810=BAR,3200,5770,#V002,5,32,700,0,1,0,11,100,250,0,0,OCRB
+;;***In the case of UPC-A code, specify it in 11 columns of data.***
+;Item_820=BAR,3200,5770,#V002,7,32,700,0,1,0,11,100,250,0,0,OCRB
+;===================================================
+Item_900=LIN,800,6820,9200,6820,30,0
+Item_910=STR,1500,7020,MADE IN CHINA,400,200,1,Arial
+
+;===================================================
+;;EC Mark
+;===================================================
+UItem_001=RCT,8300,4020,8700,4420,25,0
+Item_990=STR,8420,4090,#u1,300,0,1,MS Gothic
+
+;-------------------------------------------------------------------------------
+[Label_01]
+;-------------------------------------------------------------------------------
+Bozai=PA93950-0765
+;Bozai=PA93950-0765_SED
+Name=保证书(Warranty Card)
+Draw=X0PA93147-Y890
+Page=1
+;;RECT/string
+Item_010=RCT,1850,1650,3960,2250,25,0,#000000,#FFFFFF
+Item_020=STR,2000,1750,持込修理,450,0,1,MS Gothic
+;Item_020=STR,2000,1750,訪問修理,450,0,1,MS Gothic
+;;String
+Item_100=STR,1850,2700,品　　名,300,0,1,MS Gothic
+Item_110=STR,3350,2650,#V000,350,0,1,Consolas
+Item_120=STR,1850,3200,型　　名,300,0,1,MS Gothic
+Item_130=STR,3350,3150,#V001,350,0,1,Consolas
+Item_140=STR,1850,3700,SER.NO.,300,190,1,MS Gothic
+Item_150=STR,3350,3600,#s,400,0,1,Consolas
+Item_160=STR,8500,7450,#V005,290,0,1,MS Gothic
+
+;;;Barcode
+Item_200=BAR,R,10400,3700,#s,1,30,350,0,1,5,0,0,250,0,0,MS Gothic
+
+
+</textarea>
+
+        <!-- <button type="button" onclick="convertToCSV()">CSVに変換</button> -->
+        <button type="button" onclick="makeLabel()">FD作成</button>
+    </form>
+    <br>
+    <!-- <textarea id="output" rows="10" cols="100" readonly></textarea><br> -->
+    <textarea id="outputLabel" rows="50" cols="200" readonly></textarea>
+
+
+    <script>
+        //印刷方式
+        let printType = 'スタンドアロン印刷';
+        //ラベル分類
+        let labelType = { meiban: 'メイバンラベル', pack: '梱包ラベル', warranty: '保証書' };
+        //データタイプ
+        let dataType = { stable: '固定値', variable: '変数', img: '画像ファイル', shape: '図形', revFrame: '版数枠' };
+        //
+        let imgType = {
+            'pfu_logo.bmp': 'PFUロゴマーク',
+            'M5D01-18-012-H31(01).bmp': 'エコマーク',
+            'M5D01-18-012-H12(01).bmp': 'CE マーク'
+        };
+
+        class Device {
+            constructor() {
+                this.PARTNO = 'PartNo';
+                this.partNo = '';
+                this.MODEL = 'Model';
+                this.model = '';
+                this.MAXSERIAL = 'MaxSerial';
+                this.maxSerial = '';
+                this.FORMAT = 'Format';
+                this.format = '';
+                this.NOTE = 'Note';
+                this.note = '';
+                this.RESET = 'Reset';
+                this.reset = '';
+                this.UNISERIAL = 'UniSerial';
+                this.uniSerial = '';
+                // this.InputData = 'InputData';
+                // this.inputData = '';
+                // this.InputDefault = 'InputDefault';
+                // this.inputDefault = '';
+
+                this.BOZAI = 'Bozai';
+                this.bozai = '';
+                this.NAME = 'Name';
+                this.name = '';
+                this.DRAW = 'Draw';
+                this.draw = '';
+                this.PAGE = 'Page';
+                this.page = '';
+
+                this.labels = new Array();
+            }
+        }
+        class Label {
+            constructor() {
+
+                this.objects = new Array();
+            }
+        }
+
+        class StrObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++];
+                this.STR = items[i++];
+                //位置指定があるか判定
+                if (!isNaN(items[i])) {
+                    this.xyddd = ''; //2
+                } else {
+                    this.xyddd = items[i++]; //位置指定あればi=3とする
+                }
+                this.hpos = items[i++];
+                this.vpos = items[i++];
+                this.printData = items[i++];
+                this.height = items[i++];
+                this.range = items[i++];
+                this.decoration = items[i++];
+                this.font = items[i++];
+                this.color = items[i++];
+                this.backgroundColor = items[i++];
+                this.space = items[i++];
+
+            }
+
+            analyzeTextOb(device) {
+                //ロジック必須
+                let labeltype = '';
+
+                let content = '';
+                if (this.printData.indexOf('#z') != -1) {
+                    content = '図番';
+                }
+                if (this.printData.indexOf('#k') != -1) {
+                    content = '型格';
+                }
+                if (this.printData.indexOf('#s') != -1) {
+                    content = 'シリアル番号';
+                }
+                if (this.printData.indexOf('#n') != -1) {
+                    content = '号機';
+                }
+                if (this.printData.indexOf('#u') != -1) {
+                    content = 'ユーザ定義文字';
+                }
+
+                let datatype = '';
+                if (this.printData.indexOf('#') == -1) {
+                    datatype = dataType.stable;
+                } else {
+                    datatype = dataType.variable;
+                }
+
+                let bikou = '印字：' + this.printData + ' フォント：' + this.font;
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo,device.draw, labeltype, content, datatype, bikou);
+            }
+        }
+
+        class ImgObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++];
+                this.IMG = items[i++];
+                //位置指定があるか判定
+                if (!isNaN(items[i])) {
+                    this.xyddd = ''; //2
+                } else {
+                    this.xyddd = items[i++]; //位置指定あればi=3とする
+                }
+                this.hpos = items[i++];
+                this.vpos = items[i++];
+                this.width = items[i++];
+                this.height = items[i++];
+                this.fileName = items[i++];
+            }
+            analyzeImgOb(device) {
+                //ロジック必須
+                let labeltype = '';
+
+                let bikou = '画像ファイル：' + this.fileName + ' 高さ：' + this.height + 'mm';
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo, device.draw, labeltype, imgType[this.fileName], dataType.img, bikou);
+            }
+        }
+
+        class LinObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++];
+                this.LIN = items[i++];
+                this.startX = items[i++];
+                this.startY = items[i++];
+                this.endX = items[i++];
+                this.endY = items[i++];
+                this.width = items[i++];
+                this.style = items[i++];
+                this.color = items[i++];
+            }
+            analyzeLinOb(device) {
+                //ロジック必須
+                let labeltype = '';
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo, device.draw, labeltype, '横線', dataType.shape, '');
+            }
+        }
+
+        class RctObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++];//0
+                this.RCT = items[i++];//1
+                this.topLeftX = items[i++];//2
+                this.topLeftY = items[i++];
+                this.bottomRightX = items[i++];
+                this.bottomLeftY = items[i++];
+                this.width = items[i++];
+                this.style = items[i++];
+                this.lineColor = items[i++];
+                this.fillColor = items[i++];
+                this.ellipseWidth = items[i++];
+                this.ellipseHeight = items[i++];
+            }
+
+            analyzeRctOb(device) {
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo, device.draw, '', '', dataType.shape, '四角');
+            }
+        }
+        class BarObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++]; //0
+                this.BAR = items[i++]; //1
+                //位置指定があるか判定
+                if (!isNaN(items[i])) {
+                    this.xyddd = ''; //2
+                } else {
+                    this.xyddd = items[i++]; //位置指定あればi=3とする
+                }
+                this.hpos = items[i++]; //3
+                this.vpos = items[i++]; //4
+                this.printData = items[i++]; //5
+                this.barType = items[i++]; //6
+                this.barTypeMap = {
+                    0: 'NW-7',
+                    1: 'CODE39',
+                    2: 'ITF',
+                    5: 'JAN標準/EAN13',
+                    6: 'JAN短縮/EAN8',
+                    7: 'UPC-A',
+                    8: 'CODE93',
+                    9: 'UPC-E',
+                    10: 'CODE128',
+                    11: 'CODE128N'
+                };
+                this.narrowBarWidth = items[i++]; //7
+                this.barHeight = items[i++]; //8
+                this.checksum = items[i++]; //9
+                this.checksumMap = {
+                    0: 'チェックサムなし',
+                    1: 'チェックサム付加(解説文字には非表示)',
+                    2: 'チェックサム付加'
+                }; //9
+                this.barRatio = items[i++]; //10
+                this.characterGap = items[i++]; //11
+                this.explanatoryTextAndGuardBar = items[i++];//12
+                this.explanatoryTextAndGuardBarMap = {
+                    0: '解説文字なし',
+                    1: '解説文字あり(START/STOP文字あり）',
+                    2: '解説文字あり(START/STOP文字なし）',
+                    11: 'ガードバー有り、解説文字あり'
+                };//12
+                this.gurdBarHeight = items[i++];//13
+                this.charHeight = items[i++];//14
+                this.charWidth = items[i++];//15
+                this.charDecoration = items[i++];//16
+                this.font = items[i++];//17
+                this.barAndCommentHeight = items[i++];//18
+                this.gurdBarAndCommentHeight = items[i++];//19
+
+            }
+
+            analyzeBarOb(device) {
+                //ロジック必須
+                let labeltype = '';
+
+                let content = '';
+                if (this.printData.indexOf('#z') != -1) {
+                    content = '図番（バーコード）';
+                }
+                if (this.printData.indexOf('#k') != -1) {
+                    content = '型格（バーコード）';
+                }
+                if (this.printData.indexOf('#s') != -1) {
+                    content = 'シリアル番号（バーコード）';
+                }
+
+                let datatype = '';
+                if (this.printData.indexOf('#') == -1) {
+                    datatype = dataType.stable;
+                } else {
+                    datatype = dataType.variable;
+                }
+
+                let bikou = '印字：' + this.printData + ' バーコード種：' + this.barTypeMap[this.barType] + '(' + this.checksumMap[this.checksum] + '、' + this.explanatoryTextAndGuardBarMap[this.explanatoryTextAndGuardBar] + ')' + ' フォント：' + this.font;
+
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo, device.draw, labeltype, content, datatype, bikou);
+            }
+        }
+        class VerObject {
+            constructor(items) {
+                let i = 0;
+                this.key = items[i++]; //0
+                this.VER = items[i++]; //1
+                //位置指定があるか判定
+                if (!isNaN(items[i])) {
+                    this.xyddd = ''; //2
+                } else {
+                    this.xyddd = items[i++]; //位置指定あればi=3とする
+                }
+                this.hpos = items[i++]; //3
+                this.vpos = items[i++]; //4
+                this.lineWidth = items[i++]; //5
+                this.versionCharacterBoxWidth = items[i++]; //6
+                this.versionBoxWidth = items[i++]; //7
+                this.versionBoxHeight = items[i++]; //8
+                this.versionBoxStep = items[i++]; //9
+                this.versionLine = items[i++]; //10
+                this.versionCharacter = items[i++]; //11
+                this.version = items[i++];//12
+                this.versionVanishingLine = items[i++];//13
+                this.versionCharHeight = items[i++];//14
+                this.versionCharWidth = items[i++];//15
+                this.versionCharDecoration = items[i++];//16
+                this.font = items[i++];//17
+                this.color = items[i++];//18
+                this.backgroungColor = items[i++];//19
+                this.lineColor = items[i++];//20
+                this.fillColor = items[i++];//21
+            }
+
+            analyzeVerOb(device) {
+                //ロジック必須
+                let labeltype = '';
+
+                let bikou = 'フォント：' + this.font;
+                return writeCSVRow('', this.key, printType, device.bozai, device.partNo, device.draw, labeltype, '版数枠', dataType.revFrame, bikou);
+
+            }
+        }
+        function convertToCSV() {
+            let input = document.getElementById("input").value;
+            let csv = "";
+            if (input) {
+                // 改行で分割
+                let lines = input.split(/\r?\n/);
+                // CSV形式に変換
+                for (let i = 0; i < lines.length; i++) {
+                    let items = lines[i].split(/[=,]/);
+                    csv += items.join("\t") + "\n";
+                }
+            }
+            document.getElementById("output").value = csv;
+        }
+
+        function writeCSVRow(col0, col1, col2, col3, col4, col5, col6, col7, col8, bikou) {
+            let csv = "";
+            csv += col0 + "\t";//0
+            csv += col1 + "\t";//1
+            csv += col2 + "\t";//2
+            csv += col3 + "\t";//3
+            csv += col4 + "\t";//4
+            csv += col5 + "\t";//5
+            csv += col6 + "\t";//6
+            csv += col7 + "\t";//7
+            csv += col8 + "\t";//8
+            csv += bikou + "\t";//9
+            csv += "\n";
+            return csv;
+
+        }
+        function makeLabel() {
+            let input = document.getElementById("input").value;
+            let csv = "";
+            let device = new Device();
+            let label = new Label();
+
+            if (input) {
+                // 改行で分割
+                let lines = input.split(/\r?\n/);
+                csv += writeCSVRow('成果物名', 'ｱｲﾃﾑ番号', '印刷方式', '使用ボザイ', '装置図番', '印字仕様', 'ラベル分類', '印字内容', 'データタイプ', '備考');
+                // CSV形式に変換
+                for (let i = 0; i < lines.length; i++) {
+                    let items = lines[i].split(/[=,]/);
+                    //DeviceInfoセクション
+                    if (items[0] == '[DeviceInfo]') {
+                        csv += writeCSVRow('M9.zip', '', '', '', '', '', '', '', '', 'ラベルデータ展開情報');
+                        csv += writeCSVRow('', '[DeviceInfo]', '', '', '', '', '', '', '', '');
+                    }
+                    if (items[0] == device.PARTNO) {
+                        device.partNo = items[1];
+                        csv += writeCSVRow('', device.PARTNO, '', '', '', '', '変数定義', '装置図番', dataType.variable, device.partNo);
+                    }
+                    if (items[0] == device.MODEL) {
+                        device.model = items[1];
+                        csv += writeCSVRow('', device.MODEL, '', '', '', '', '変数定義', '装置型格', dataType.variable, device.model);
+                    }
+                    if (items[0] == device.MAXSERIAL) {
+                        device.maxSerial = items[1];
+                        csv += writeCSVRow('', device.MAXSERIAL, '', '', '', '', '変数定義', '最大号機', dataType.variable, device.maxSerial);
+                    }
+                    if (items[0] == device.FORMAT) {
+                        device.format = items[1];
+                        csv += writeCSVRow('', device.FORMAT, '', '', '',  '', '変数定義', 'シリアルNo.書式', dataType.variable, device.format);
+                    }
+                    if (items[0] == device.NOTE) {
+                        device.note = items[1];
+                        csv += writeCSVRow('', device.NOTE, '', '', '',  '', '変数定義', '備考', dataType.variable, device.note);
+                    }
+                    if (items[0] == device.RESET) {
+                        device.reset = items[1];
+                        csv += writeCSVRow('', device.RESET, '', '', '', '', '変数定義', '号機リセット動作', dataType.variable, device.reset);
+                    }
+                    if (items[0] == device.UNISERIAL) {
+                        device.uniSerial = items[1];
+                        csv += writeCSVRow('', device.uniSerial, '', '', '',  '', '変数定義', '号機の共有', dataType.variable, device.UNISERIAL);
+                    }
+                    if (items[0].startsWith('InputData(')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '変数定義', '', dataType.variable, items[1]);
+                    }
+                    if (items[0].startsWith('InputDefault(')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '変数定義', '', dataType.variable, items[1]);
+                    }
+                    if (items[0].startsWith('Variable_')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '変数定義', '', dataType.variable, items[1]);
+                    }
+                    if (items[0].startsWith('DateFormat_')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '変数定義', '', dataType.variable, items[1]);
+                    }
+
+
+                    //Label_xxセクション
+                    if (items[0].startsWith('[Label_')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '', '', '', '');
+                    }
+                    if (items[0] == device.NAME) {
+                        device.name = items[1];
+                        csv += writeCSVRow('', device.NAME, '', '', '', '', '変数定義', 'ラベル名称', dataType.variable, device.name);
+                    }
+                    if (items[0] == device.BOZAI) {
+                        device.bozai = items[1];
+                        csv += writeCSVRow('', device.BOZAI, '', '', '',  '', '変数定義', 'ボザイ図番', dataType.variable, device.bozai);
+                    }
+                    if (items[0] == device.DRAW) {
+                        device.draw = items[1];
+                        csv += writeCSVRow('', device.DRAW, '', '', '', '', '変数定義', 'ラベル印刷仕様図番', dataType.variable, device.draw);
+                    }
+                    if (items[0] == device.PAGE) {
+                        device.page = items[1];
+                        csv += writeCSVRow('', device.PAGE, '', '', '', '', '変数定義', '使用ページ数', dataType.variable, device.page);
+                    }
+                    if (items[0].startsWith('Template_')) {
+                        csv += writeCSVRow('', items[0], '', '', '', '', '変数定義', 'テンプレートファイル名', dataType.variable, items[1]);
+                    }
+                    //レイアウトアイテム
+                    //文字型
+                    if (items[1] == 'STR') {
+                        let strOb = new StrObject(items);
+                        label.objects.push(strOb);
+                        csv += strOb.analyzeTextOb(device);
+                    }
+                    //バーコード
+                    if (items[1] == 'BAR') {
+                        let barOb = new BarObject(items);
+                        label.objects.push(barOb);
+                        csv += barOb.analyzeBarOb(device);
+                    }
+                    //画像
+                    if (items[1] == 'IMG') {
+                        let imgOb = new ImgObject(items);
+                        label.objects.push(imgOb);
+                        csv += imgOb.analyzeImgOb(device);
+                    }
+                    //版数出力アイテム
+                    if (items[1] == 'VER') {
+                        let verOb = new VerObject(items);
+                        label.objects.push(verOb);
+                        csv += verOb.analyzeVerOb(device);
+                    }
+                    //横線
+                    if (items[1] == 'LIN') {
+                        let linOb = new LinObject(items);
+                        label.objects.push(linOb);
+                        csv += linOb.analyzeLinOb(device);
+                    }
+                    //四角
+                    if (items[1] == 'RCT') {
+                        let rctOb = new RctObject(items);
+                        label.objects.push(rctOb);
+                        csv += rctOb.analyzeRctOb(device);
+                    }
+                }
+            }
+            document.getElementById("outputLabel").value = csv;
+        }
+    </script>
+</body>
+
+</html>
